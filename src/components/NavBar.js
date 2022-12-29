@@ -6,8 +6,8 @@ const NavBar = () => {
             <a href="./index.html"> </a>
             <ul class="cabecera_links">
                 <li>Inicio</li>
-                <li>Miembros</li>
-                <li>Discografía</li>
+                <li>Nacionales</li>
+                <li>Internacionales</li>
                 <li>Galería</li>
                 <li>Contacto</li>
                 <Cartwidget />
