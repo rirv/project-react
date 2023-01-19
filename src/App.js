@@ -1,18 +1,19 @@
-import "./App.css";
-import NavBar from "./components/NavBar";
-import ItemListContainer from "./components/ItemListContainer";
-
+import NavBar from "./components/NavBar/NavBar";
+import ItemListContainer from "./pages/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "./pages/ItemDetailContainer/ItemDetailContainer";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <div>
-        <NavBar />
-        <ItemListContainer greeting="Bienvenidos a Mundo Estampilla!"/>
-      </div>
-      
-    </div>
-  );
+    <BrowserRouter>
+    <NavBar />
+    <Routes>
+      <Route path='/' element={<ItemListContainer />} />
+      <Route path='/category/:category' element={<ItemListContainer />} />
+      <Route path="item/:id" element={<ItemDetailContainer />} />
+    </Routes> 
+    </BrowserRouter>
+ );
 }
 
 export default App;
