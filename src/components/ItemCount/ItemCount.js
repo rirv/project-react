@@ -1,20 +1,19 @@
 import './style.css';
-import { useState } from 'react';
 
-const ItemCount = () => {
-    const [contador, setContador] = useState(1);
-    const stock = 10;
-    const sumar = () =>{
+const ItemCount = ({contador, actualizaValor, stock, getNumeroCualquiera}) => {
+  const numeroCualquiera = 10;
+    const OnAdd = () =>{
         if (stock === contador) {
             return;
         }
-        setContador(contador + 1)
+        actualizaValor(contador + 1);
+        getNumeroCualquiera(numeroCualquiera)
     };
     const restar = () =>{
         if (contador === 0){
             return;
         }
-        setContador(contador - 1)
+        actualizaValor(contador - 1)
     };
 
   return (
@@ -24,10 +23,7 @@ const ItemCount = () => {
         <div>
           <span>{contador}</span>
         </div>
-        <button onClick={sumar}>+</button>
-      </div>
-      <div>
-        <button>Agregar al Carrito</button>
+        <button onClick={OnAdd}>+</button>
       </div>
     </div>
   );
